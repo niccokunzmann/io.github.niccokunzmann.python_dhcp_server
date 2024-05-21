@@ -2,3 +2,4 @@
 /.flatpak-builder
 /.repo
 /.flatpak-lint.error.txt
+/io.github.niccokunzmann.python_dhcp_server.flatpak

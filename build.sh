@@ -57,10 +57,10 @@ echo "(3) The Following commands install the app through a repository"
 #flatpak --user remote-add --no-gpg-verify "$reponame" "$repo"
 #flatpak --user install -y "$reponame" "$id"
 
-./lint.sh
+echo "(4) Create flatpak file"
+flatpak build-bundle "$repo" "$id.flatpak" "$id"
 
-## flatpak file
-flatpak build-bundle "$repo" "../build/$id.flatpak" "$id"
+./lint.sh
 
 echo "You can now run the app:"
 echo

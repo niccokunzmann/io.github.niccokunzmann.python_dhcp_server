@@ -8,13 +8,15 @@ set -e
 cd "`dirname \"$0\"`"
 
 ID=io.github.niccokunzmann.python_dhcp_server
+# persistent config directory
+config=/app/config
 
 
 echo Install the executable
 
 mkdir -p /app/bin/
 install -D python_dhcp_server /app/bin/python_dhcp_server
-
+mv server /app/
 
 echo Install metadata
 ## see https://docs.flatpak.org/en/latest/conventions.html#metainfo-files
@@ -43,5 +45,17 @@ for resolution in 128 256 512; do
 done
 mkdir -p /app/share/icons/hicolor/scalable/apps/
 mv icons/icon.svg /app/share/icons/hicolor/scalable/apps/$ID.svg
+
+echo Setup Persistent Storage
+mkdir -p "$config"
+#mv /app/server/dhcpgui.conf /app/server/dhcpgui.conf.bak
+#ln -sT "$config/dhcpgui.conf" /app/server/dhcpgui.conf
+
+echo -------------------------------------------------
+echo Build Context for DEBUG
+echo pwd=`pwd`
+ls
+echo -------------------------------------------------
+
 
 echo Install done
