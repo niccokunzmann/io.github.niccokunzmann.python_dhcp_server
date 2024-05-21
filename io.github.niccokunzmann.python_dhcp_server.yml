@@ -15,11 +15,13 @@ finish-args:
 modules:
   - name: python_dhcp_server
     # There are other types of buildsystems, like autotools, cmake, cmake-ninja, simple, qmake
-    buildsystem: meson
+    buildsystem: simple
     # see https://docs.flatpak.org/en/latest/manifests.html#modules
+    build-commands:
+      - ./inside.sh
     sources:
       - type: dir
-        path: .
+        path: app
       - type: archive
         url: https://github.com/niccokunzmann/python_dhcp_server/archive/refs/tags/0.7.tar.gz
         # wget -O- 'https://github.com/niccokunzmann/python_dhcp_server/archive/refs/tags/0.7.tar.gz' | sha256sum

@@ -7,5 +7,5 @@ Comment=Serve and inspect IP addresses in the local network
 Categories=Network;Monitor;
 
 Icon=io.github.niccokunzmann.python_dhcp_server
-Exec=dhcpgui.pyw
+Exec=python_dhcp_server
 Terminal=false
