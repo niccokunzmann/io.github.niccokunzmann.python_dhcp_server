@@ -24,15 +24,15 @@ cd "`dirname \"$0\"`"
 
 id="io.github.niccokunzmann.python_dhcp_server"
 manifest="$id.yml"
-repo="repo"
+repo=".repo"
 
 echo "Linter 1"
 ## see https://docs.flathub.org/docs/for-app-authors/submission/#before-submission
 flatpak run --command=flatpak-builder-lint org.flatpak.Builder manifest "$manifest"
 echo "Linter 2"
-errors="flatpak-lint.error.txt"
-flatpak run --command=flatpak-builder-lint org.flatpak.Builder --exceptions "$repo" "$repo" | tee "$errors"
-if [ "`cat \"$errors\"`" != "`cat flatpak-lint.error.txt`" ]; then
+errors=".flatpak-lint.error.txt"
+flatpak run --command=flatpak-builder-lint org.flatpak.Builder --exceptions "repo" "$repo" | tee "$errors"
+if [ "`cat \"$errors\"`" != "`cat flatpak-lint.expected-error.txt`" ]; then
   echo "Linter error!"
   exit 1
 else
