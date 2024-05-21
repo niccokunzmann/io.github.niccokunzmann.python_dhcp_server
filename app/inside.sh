@@ -25,7 +25,7 @@ echo Install metadata
 mkdir -p files/share/app-info
 cp $ID.xml files/share/app-info/
 mkdir -p /app/share/metainfo/
-mv $ID.xml /app/share/metainfo/
+mv $ID.xml /app/share/metainfo/$ID.metainfo.xml
 
 
 echo Install Desktop file
@@ -38,7 +38,7 @@ cp $ID.desktop /app/share/applications/
 echo Install icons
 ## see https://docs.flatpak.org/en/latest/conventions.html#application-icons
 
-for resolution in 128 256 512; do
+for resolution in 64 128 256 512; do
   dir="/app/share/icons/hicolor/${resolution}x${resolution}/apps/"
   mkdir -p "$dir"
   mv icons/icon-${resolution}.png "$dir/$ID.png"
