@@ -24,12 +24,17 @@ modules:
     sources:
       - type: dir
         path: app
-      - type: dir
-        path: python_dhcp_server
+    # for testing
+      # - type: dir
+      #   path: python_dhcp_server
+    # for release
+      - type: git
+        tag: "0.8"
+        commit: "cffdfef4e22e2e2d8cbc45abe5f9560c51816bcb"
       # - type: archive
-      #   url: https://github.com/niccokunzmann/python_dhcp_server/archive/refs/tags/0.7.tar.gz
-      #   # wget -O- 'https://github.com/niccokunzmann/python_dhcp_server/archive/refs/tags/0.7.tar.gz' | sha256sum
-      #   sha256: b1ffccbab4c880b528c373e996f1ef0ba189cdff5dd9a86008d7bcf8c1f81e24
+      #   url: https://github.com/niccokunzmann/python_dhcp_server/archive/refs/tags/0.8.tar.gz
+      #   # wget -O- 'https://github.com/niccokunzmann/python_dhcp_server/archive/refs/tags/0.8.tar.gz' | sha256sum
+      #   sha256: c489fb0e6d302170d11a009b601ca22073a6e42110a363dcb32560b2c3af61f9
 
   # install tkinter, see https://discourse.flathub.org/t/how-can-i-package-a-python-tkinter-application/3795/4
   # copied from https://github.com/flathub/net.scribus.Scribus/blob/master/net.scribus.Scribus.yaml
