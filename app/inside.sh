@@ -39,10 +39,9 @@ echo Install icons
 for resolution in 128 256 512; do
   dir="/app/share/icons/hicolor/${resolution}x${resolution}/apps/"
   mkdir -p "$dir"
-  mv icon/icon-${resolution}.png "$dir/$ID.png"
+  mv icons/icon-${resolution}.png "$dir/$ID.png"
 done
 mkdir -p /app/share/icons/hicolor/scalable/apps/
-mv icon/icon.svg /app/share/icons/hicolor/scalable/apps/$ID.svg
-
+mv icons/icon.svg /app/share/icons/hicolor/scalable/apps/$ID.svg
 
 echo Install done

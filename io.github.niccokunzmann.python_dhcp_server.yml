@@ -4,7 +4,7 @@ runtime: org.freedesktop.Platform
 runtime-version: "23.08"
 sdk: org.freedesktop.Sdk
 # This is the command that will be run when the application is launched
-command: server/dhcpgui.pyw
+command: python_dhcp_server
 # These are the permissions that the application needs
 # Read more about finishing here: https://docs.flatpak.org/en/latest/manifests.html#finishing
 finish-args:
@@ -12,6 +12,7 @@ finish-args:
   - --socket=wayland
   - --share=network
   - --share=ipc
+  - --allow=multiarch
 modules:
   - name: python_dhcp_server
     # There are other types of buildsystems, like autotools, cmake, cmake-ninja, simple, qmake
@@ -26,3 +27,7 @@ modules:
         url: https://github.com/niccokunzmann/python_dhcp_server/archive/refs/tags/0.7.tar.gz
         # wget -O- 'https://github.com/niccokunzmann/python_dhcp_server/archive/refs/tags/0.7.tar.gz' | sha256sum
         sha256: b1ffccbab4c880b528c373e996f1ef0ba189cdff5dd9a86008d7bcf8c1f81e24
+      # install tkinter, see https://discourse.flathub.org/t/how-can-i-package-a-python-tkinter-application/3795/4
+      - type: git
+        url: https://github.com/iwalton3/tkinter-standalone
+        commit: ba946536054f9d27a08aafde21aa18330ce05729

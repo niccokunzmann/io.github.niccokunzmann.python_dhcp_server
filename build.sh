@@ -22,7 +22,7 @@
 builddir=".build"
 id="io.github.niccokunzmann.python_dhcp_server"
 manifest="$id.yml"
-repo="repo"
+repo=".repo"
 reponame="python_dhcp_server_repo"
 builder="flatpak run org.flatpak.Builder"
 SUDO=""

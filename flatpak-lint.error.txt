@@ -1,0 +1,8 @@
+{
+    "errors": [
+        "appstream-missing-appinfo-file",
+        "appstream-metainfo-missing",
+        "appstream-missing-appinfo"
+    ],
+    "message": "Please consult the documentation at https://docs.flathub.org/docs/for-app-authors/linter"
+}

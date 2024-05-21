@@ -30,7 +30,7 @@ echo "Linter 1"
 ## see https://docs.flathub.org/docs/for-app-authors/submission/#before-submission
 flatpak run --command=flatpak-builder-lint org.flatpak.Builder manifest "$manifest"
 echo "Linter 2"
-errors="../build/flatpak-lint.error.txt"
+errors="flatpak-lint.error.txt"
 flatpak run --command=flatpak-builder-lint org.flatpak.Builder --exceptions "$repo" "$repo" | tee "$errors"
 if [ "`cat \"$errors\"`" != "`cat flatpak-lint.error.txt`" ]; then
   echo "Linter error!"
