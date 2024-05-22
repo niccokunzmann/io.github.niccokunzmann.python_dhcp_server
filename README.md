@@ -3,7 +3,6 @@
 This is the flatpak repository for
 [Python DHCP Server][app]
 
-[app]: https://github.com/niccokunzmann/python_dhcp_server/
 
 ## New Releases
 
@@ -17,3 +16,11 @@ This is the flatpak repository for
    git commit -am "new release"
    git push origin release
    ```
+
+## Related
+
+- [Flathub Submission PR](https://github.com/flathub/flathub/pull/5273)
+- [Upstream Source Code][app]
+
+
+[app]: https://github.com/niccokunzmann/python_dhcp_server/
